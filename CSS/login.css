@@ -1,0 +1,279 @@
+body {
+    display: grid;
+    grid-template-columns: 95% 5%;
+}
+
+main {
+    width: 50%;
+}
+
+body * {
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+p,
+h2 {
+    display: block;
+}
+
+
+/* form>* {
+    display: inline;
+    margin-top: 5px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+} */
+
+form {
+    width: 100%;
+}
+
+form>* {
+    display: block;
+    margin-top: 5px;
+}
+
+form>input {
+    /* width: 100%;
+    border-radius: 5px;
+    height: 35px; */
+    /* Text field */
+    box-sizing: border-box;
+    width: 528px;
+    height: 56px;
+    border: 1px solid #666666;
+    border-radius: 12px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 24px;
+    padding: 10px;
+}
+
+form label,
+#hide {
+    /* Label */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #666666;
+}
+
+form>input[type="submit"] {
+    margin-top: 20px;
+    /* Button */
+    width: 528px;
+    height: 64px;
+    background: #111111;
+    opacity: 0.25;
+    border-radius: 40px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    /* Sign up */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 33px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+form>label {
+    margin-top: 20px;
+}
+
+.left-div {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+}
+
+.sidebar {
+    /* border */
+    box-sizing: border-box;
+    width: 100px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #000000;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    justify-content: center;
+    align-content: stretch;
+}
+
+.sidebar button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px solid black;
+    cursor: pointer;
+}
+
+.sidebar img {
+    width: 52.42px;
+    height: 48px;
+}
+
+.sign-in {
+    margin-top: 30px;
+    /* Sign in */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 56px;
+    gap: 10px;
+    width: 640px;
+    height: 582px;
+    border: 1px solid rgba(102, 102, 102, 0.5);
+    border-radius: 24px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.create-account-div {
+    margin-top: 30px;
+    /* Sign in */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 56px;
+    gap: 10px;
+    width: 640px;
+    height: 582px;
+    border: 1px solid rgba(102, 102, 102, 0.5);
+    border-radius: 24px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-wrap: nowrap;
+}
+
+.sign-in-problems {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+}
+
+.create-account button {
+    /* Button */
+    box-sizing: border-box;
+    width: 640px;
+    height: 64px;
+    border: 1px solid #111111;
+    border-radius: 40px;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    /* Sign up */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #111111;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+.divider {
+    margin: 20px 0px;
+}
+
+.hide-password-div {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+}
+
+#hide {
+    width: 73px;
+    height: 27px;
+    background-color: #FFFFFF;
+    border: none;
+    grid-column: 3;
+    cursor: pointer;
+}
+
+p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+}
+
+h2 {
+    /* Sign in */
+    width: 108px;
+    height: 48px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #333333;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+u {
+    cursor: pointer;
+}
+
+#SignUpBtn {
+    /* Button */
+    width: 528px;
+    height: 56px;
+    background: #111111;
+    border-radius: 40px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    opacity: 1;
+}
