@@ -1,0 +1,48 @@
+.university-plan-div,
+.student-created-plan-div {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+}
+
+.university-plan-course-container div,
+.student-plan-course-container div {
+    display: grid;
+    background: rgba(102, 102, 102, 0.33);
+    backdrop-filter: blur(12.5px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 21px;
+    align-content: flex-start;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    border: 1px solid black;
+    width: 137.275px;
+    height: 235px;
+    margin: 30px;
+    padding: 5px;
+    gap: 10px;
+}
+
+.university-plan-course-container,
+.student-plan-course-container {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.university-plan-course-container button,
+.student-plan-course-container button {
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+    border: 3.5px solid rgba(58, 108, 217, 0.5);
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25);
+    border-radius: 6px;
+    color: white;
+    width: 100px;
+}
+
+.student-plan-course-container div {
+    background: #FFFFFF;
+}
+
+.left-div {
+    display: grid;
+    grid-template-columns: 100%;
+}
