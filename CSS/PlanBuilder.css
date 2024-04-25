@@ -15,9 +15,9 @@
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto auto auto auto auto;
     border: 1px solid black;
-    width: 137.275px;
+    width: 115px;
     height: 235px;
-    margin: 30px;
+    margin: 0px 10px;
     padding: 5px;
     gap: 10px;
 }
