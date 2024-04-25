@@ -1,3 +1,6 @@
+bothOptions = ['Aerospace Engineering', 'Aerospace Engineering', 'Architectural Engineering', 'Architectural Engineering', 'Bioengineering', 'Bioengineering', 'Chemical Engineering', 'Chemical Engineering', 'Civil Engineering', 'Civil Engineering', 'Computer Engineering', 'Computer Engineering', 'Computer Science', 'Computer Science', 'Control and Instrumentation Engineering', 'Control and Instrumentation Engineering', 'Electrical Engineering', 'Electrical Engineering', 'Industrial and Systems Engineering', 'Industrial and Systems Engineering', 'Mechanical Engineering', 'Mechanical Engineering']
+summerTraining = ['Accounting', 'Actuarial Science and Financial Mathematics', 'Chemistry', 'Electrical Engineering and Physics', 'Environmental Science and Engineering', 'Finance', 'Geology', 'Geophysics', 'Integrated Design', 'Management', 'Management Information System', 'Marketing', 'Materials Science and Engineering', 'Mathematics', 'Mining Science and Engineering', 'Petroleum Engineering', 'Physics', 'Smart and Sustainable Cities', 'Software Engineering']
+
 class Course {
     constructor(code, credits, name, desc) {
         this.name = name;
@@ -137,6 +140,7 @@ semesterArray[8] = new Map(coursesMap);
 coursesMap.clear();
 
 function populate_courses() {
+    updateTrainingOptions()
     let uni_plan_div = document.getElementsByClassName("university-plan-div").item(0);
     for (let i = 0; i < semesterArray.length; i++) {
         // for each semester
@@ -214,5 +218,17 @@ function updateCredits() {
         })
         let p = stu_plans.item(i).lastChild;
         p.textContent = credits;
+    }
+}
+
+function updateTrainingOptions() {
+    let major = document.getElementById("select-major");
+    console.log(major.value)
+    if (bothOptions.indexOf(major.value) == -1) {
+        document.getElementById("summer").disabled = false;
+        document.getElementById("internship").disabled = true;
+    } else {
+        document.getElementById("summer").disabled = false;
+        document.getElementById("internship").disabled = false;
     }
 }
