@@ -8,27 +8,27 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <link rel="icon" href="../Resources/fevicon.png" type="image/gif" />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>PlainIt</title>
+  <title>Hostit</title>
 
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.css" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../CSS/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../CSS/responsive.css" rel="stylesheet" />
 
 </head>
 
@@ -40,7 +40,7 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
-            <span>PLanIt</span>
+            <span>PlanIt</span>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,22 +52,24 @@
               <li class="nav-item ">
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="about.html"> About</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="service.html">Services</a>
               </li>
-              <li class="nav-item">
+
+              <li class="nav-item active">
                 <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
             </ul>
             <div class="quote_btn-container">
               <form class="form-inline">
-                <button class="btn   nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
+                <button class="btn   nav_user-btn" type="submit">
+                  <i class="fa fa-user" aria-hidden="true"></i>
                 </button>
               </form>
+
             </div>
           </div>
         </nav>
@@ -76,37 +78,42 @@
     <!-- end header section -->
   </div>
 
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
-    <div class="container  ">
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Get In Touch
+        </h2>
+      </div>
       <div class="row">
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                About Us
-              </h2>
-            </div>
-            <p>
-              Planit is the knew way to plan for your futher academc plan
-            </p>
-            <a href="">
-              Read More
-            </a>
+        <div class="col-md-8 col-lg-6 mx-auto">
+          <div class="form_container">
+            <form action="">
+              <div>
+                <input type="text" placeholder="Your Name" />
+              </div>
+              <div>
+                <input type="email" placeholder="Your Email" />
+              </div>
+              <div>
+                <input type="text" placeholder="Your Phone" />
+              </div>
+              <div>
+                <input type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="btn_box ">
+                <button>
+                  SEND
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/logo-no-background.png" alt="logo">
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
-
-  <!-- end about section -->
+  <!-- end contact section -->
 
   <!-- info section -->
 
@@ -119,7 +126,7 @@
               Address
             </h4>
             <div class="contact_link_box">
-                            <a href="">
+              <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                  Dharan
@@ -128,7 +135,7 @@
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  planit@gmail.com
+                  PlanIt@gmail.com
                 </span>
               </a>
             </div>
@@ -155,19 +162,20 @@
             </h4>
             <div class="info_links">
               <a class="" href="index.html">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="../Resources/nav-bullet.png" alt="">
                 Home
               </a>
-              <a class="active" href="about.html">
-                <img src="images/nav-bullet.png" alt="">
+              <a class="" href="about.html">
+                <img src="../Resources/nav-bullet.png" alt="">
                 About
               </a>
               <a class="" href="service.html">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="../Resources/nav-bullet.png" alt="">
                 Services
               </a>
-              <a class="" href="contact.html">
-                <img src="images/nav-bullet.png" alt="">
+
+              <a class="active" href="contact.html">
+                <img src="../Resources/nav-bullet.png" alt="">
                 Contact Us
               </a>
             </div>
@@ -179,7 +187,7 @@
               Info
             </h4>
             <p>
-              KFUPM
+             KFUPM
             </p>
           </div>
         </div>
@@ -205,7 +213,7 @@
   <footer class="footer_section">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved by PlanIt
+        &copy; <span id="displayYear"></span> All Rights Reserved By PlanIt
         <a href="https://html.design/"></a>
       </p>
     </div>
@@ -213,11 +221,11 @@
   <!-- footer section -->
 
   <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="../JS/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="../JS/bootstrap.js"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script src="../JS/custom.js"></script>
 
 
 </body>
