@@ -144,7 +144,7 @@ a:focus {
   text-transform: uppercase;
 }
 
-.custom_nav-container {
+.custom_nav-container .nav_user-btn {
   width: 35px;
   height: 35px;
   padding: 0;
