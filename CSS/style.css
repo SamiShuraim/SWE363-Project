@@ -861,7 +861,14 @@ a:focus {
           justify-content: center;
 }
 
-.contact_section .form_container button {
+.divider{
+  justify-content: center;
+  display: flex;
+
+}
+
+
+.contact_section .form_container button:not(.toggle_password) {
   border: none;
   text-transform: uppercase;
   display: inline-block;
@@ -873,12 +880,33 @@ a:focus {
   -webkit-transition: all .3s;
   transition: all .3s;
   font-weight: bold;
+  width: 195px;
 }
 
 .contact_section .form_container button:hover {
   background-color: transparent;
   color: #ff4646;
 }
+
+.password_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password_container input {
+  flex-grow: 1;
+}
+
+.toggle_password {
+  position: absolute;
+  right: 10px;
+  bottom: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 
 /* info section */
 .info_section {

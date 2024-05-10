@@ -1,14 +1,17 @@
 function showHidePassword() {
     let passwordInputElement = document.getElementById("password");
-    if (passwordInputElement.getAttribute("type") == "password") {
-        passwordInputElement.setAttribute("type", "text");
-        return;
+    let toggleIcon = document.getElementById("toggleEye");
+    if (passwordInputElement.type === "password") {
+      passwordInputElement.type = "text";
+      toggleIcon.className = "fa fa-eye-slash";  // Change icon to 'eye-slash'
+    } else {
+      passwordInputElement.type = "password";
+      toggleIcon.className = "fa fa-eye";  // Change icon back to 'eye'
     }
-    passwordInputElement.setAttribute("type", "password");
-}
+  }
+  
 
-function loginBtnBlue() {
-    let loginBtn = document.getElementById("submitBtn")
+function loginBtnCheck() {
     let EmailPhoneNumberInputElement = document.getElementById("Email-PNumber");
     let passwordInputElement = document.getElementById("password");
     if (
@@ -21,14 +24,37 @@ function loginBtnBlue() {
         ) &&
         passwordInputElement.value.length >= 8
     ) {
-        loginBtn.style.backgroundColor = "#0000FF";
-        loginBtn.style.color = "#000000";
-        loginBtn.style.cursor = "pointer";
         return;
     }
-    loginBtn.style.backgroundColor = "#111111";
-    loginBtn.style.color = "#FFFFFF"
 }
+
+
+function signupBtnCheck() {
+    let EmailInputElement = document.getElementById("Email");
+    let passwordInputElement = document.getElementById("password");
+    let PhoneNumberElement = document.getElementById("PNumber")
+    if (
+        (
+            PhoneNumberElement.value.length == 10 &&
+            startsWith05(PhoneNumberElement.value)
+        )
+        &&
+        (
+            EmailInputElement.value.includes("@") ||
+            (
+                EmailInputElement.value.trim().length == 10 &&
+                !EmailInputElement.value.includes("@")
+            )
+        ) &&
+        passwordInputElement.value.length >= 8
+    ) {
+        return;
+    }
+}
+function startsWith05(number) {
+    return number.toString().startsWith('05');
+}
+
 
 
 function setLogo() {
