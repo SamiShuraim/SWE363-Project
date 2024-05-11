@@ -1,34 +1,43 @@
-function showHidePassword() {
-    let passwordInputElement = document.getElementById("password");
-    if (passwordInputElement.getAttribute("type") == "password") {
-        passwordInputElement.setAttribute("type", "text");
-        return;
-    }
-    passwordInputElement.setAttribute("type", "password");
+document.addEventListener('DOMContentLoaded', function() {
+    const submissionContainer = document.querySelector('.submission-container');
+    const sortSelect = document.getElementById('sort');
+
+    // Event listener for voting buttons
+    submissionContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('upvote')) {
+            handleVote(event.target, 1);
+        } else if (event.target.classList.contains('downvote')) {
+            handleVote(event.target, -1);
+        }
+    });
+
+    // Event listener for sorting submissions
+    sortSelect.addEventListener('change', function() {
+        sortSubmissions(this.value, submissionContainer);
+    });
+});
+
+function handleVote(button, increment) {
+    const submission = button.closest('.submission');
+    const scoreSpan = submission.querySelector('.score');
+    const currentScore = parseInt(scoreSpan.textContent, 10);
+    const newScore = currentScore + increment;
+
+    scoreSpan.textContent = newScore; // Update the score in the UI
+    submission.setAttribute('data-score', newScore.toString()); // Update the data attribute for sorting
 }
 
-function loginBtnBlue() {
-    let loginBtn = document.getElementById("submitBtn")
-    let EmailPhoneNumberInputElement = document.getElementById("Email-PNumber");
-    let passwordInputElement = document.getElementById("password");
-    if (
-        (
-            EmailPhoneNumberInputElement.value.includes("@") ||
-            (
-                EmailPhoneNumberInputElement.value.trim().length == 10 &&
-                !EmailPhoneNumberInputElement.value.includes("@")
-            )
-        ) &&
-        passwordInputElement.value.length >= 8
-    ) {
-        loginBtn.style.backgroundColor = "#0000FF";
-        loginBtn.style.color = "#000000";
-        loginBtn.style.cursor = "pointer";
-        return;
+function sortSubmissions(sortBy, container) {
+    let submissions = Array.from(container.getElementsByClassName('submission'));
+    if (sortBy === 'top') {
+        submissions.sort(function(a, b) {
+            return parseInt(b.getAttribute('data-score')) - parseInt(a.getAttribute('data-score'));
+        });
     }
-    loginBtn.style.backgroundColor = "#111111";
-    loginBtn.style.color = "#FFFFFF"
+
+    submissions.forEach(submission => container.appendChild(submission)); // Re-append submissions in new order
 }
+
 
 
 function setLogo() {

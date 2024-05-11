@@ -8,8 +8,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../CSS/login.css'>
     <script src='../JS/login.js'></script>
-
-
 </head>
 
 <body>
@@ -29,28 +27,45 @@
                     setLogo();
                 </script>
             </div>
-            <div class="create-account-div">
+            <div class="sign-in">
                 <h2>
-                    Create an account
+                    Sign in
                 </h2>
                 <form>
-                    <label for="Email">Email</label>
-                    <input id="Email" name="Email" onchange="" required></input>
-                    <label for="PNumber">Phone number</label>
-                    <input id="PNumber" name="PNumber" onchange="" required></input>
+                    <label for="Email-PNumber">Email or mobile phone number</label>
+                    <input id="Email-PNumber" name="Email-PNumber" onkeyup="loginBtnBlue()" required></input>
                     <div class="hide-password-div">
                         <label for="password" class="password-label">Your password</label>
                         <button type="button" id="hide" onclick="showHidePassword()">Hide</button>
                     </div>
-                    <input type="password" id="password" name="password" onchange="" required></input>
-                    <input id="SignUpBtn" type="submit" value="Sign up"></input>
+                    <input type="password" id="password" name="password" onkeyup="loginBtnBlue()" required></input>
+                    <input onClick="login()" id="submitBtn" value="Log in" type="submit"></input>
                 </form>
                 <p>
-                    By creating an account, you agree to the <u>Terms of use</u> and <u>Privacy Policy</u>
+                    By continuing you agree to the <u>Terms of use</u> and <u>Privacy Policy</u>
                 </p>
                 <div class="sign-in-problems">
-
+                    <p>
+                        <u>
+                            Forgot your password?
+                        </u>
+                    </p>
+                    <p>
+                        <u>
+                            Other issue with sign in?
+                        </u>
+                    </p>
                 </div>
+            </div>
+            <div class="divider">
+                New to our community?
+            </div>
+            <div class="create-account">
+                <a href="/register" style="text-decoration: none;">
+                    <button>
+                        Create an account
+                    </button>
+                </a>
             </div>
         </div>
     </main>
