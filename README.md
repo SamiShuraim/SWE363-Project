@@ -1,17 +1,24 @@
 **PlanIt: Build the plan that you want, your academic journey, your way**
 
 
-**About Us**:At Planit, we help you achieve your academic goals. Here's how
+**About Us**
 
-**Build Your Plan**:Get started on the right foot with our personalized planning service
+At Planit, we help you achieve your academic goals. Here's how
+
+**Build Your Plan**
+
+Get started on the right foot with our personalized planning service
 
 -Set a clear and achievable academic plan
 -Create a plan that works for you
 -Stay on track and make progress toward your academic goals
 
-**Community**:Join our vibrant community of students who are all working towards their academic goals
+**Community**
+
+Join our vibrant community of students who are all working towards their academic goals
 
 -Share your plans and get feedback from peers
+
 -Get inspired by others' plans
 
 **Courses Info**
