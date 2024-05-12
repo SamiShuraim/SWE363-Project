@@ -7,7 +7,7 @@ const app = express();
 
 app.set("view engine", "njk");
 
-njk.configure("./SWE363-Project/views", {
+njk.configure("../SWE363-Project/views", {
   autoescape: true,
   express: app,
 });

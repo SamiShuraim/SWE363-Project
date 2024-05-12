@@ -17,28 +17,46 @@ const app = express();
 
 app.set("view engine", "njk");
 // Serve static files in the public directory
-app.use(express.static("./SWE363-Project/public"));
+app.use(express.static("../SWE363-Project/public"));
 
 // Configure Express to use CORS middleware
 app.use(cors());
 
 // Configure nunjucks as the template engine
-configure("./SWE363-Project/views", {
+configure("../SWE363-Project/views", {
   autoescape: true,
   express: app,
 });
 
-// // Accept and parse JSON and url-encoded forms
+// Accept and parse JSON and url-encoded forms
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
 // Render the index template for GET '/'
 app.get("/", (req, res) => {
-  res.render("login.njk"); // Todo: Home page
+  res.render("index.html"); // Todo: Home page
 });
 
-app.get("/auth", (req, res) => {
-  res.render("login.njk");
+app.get("/login", (req, res) => {
+  res.render("Login.html");
+});
+
+app.get("/contact", (req, res) => {
+  res.render("Contact.html");
+});
+
+app.get("/service", (req, res) => {
+  res.render("service.html");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about.html");
+});
+app.get("/community", (req, res) => {
+  res.render("community.njk");
+});
+app.get("/recover", (req, res) => {
+  res.render("recover.html");
 });
 
 // Use the answers router for any request to '/answer'

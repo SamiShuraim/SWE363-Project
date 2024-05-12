@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>PlanIt</title>
+  <title>PlainIt</title>
 
 
   <!-- bootstrap core css -->
@@ -39,8 +39,8 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="../HTML/index.html">
-            <span>PlanIt</span>
+          <a class="navbar-brand" href="/index">
+            <span>PlainIt</span>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,22 +50,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ml-auto">
               <li class="nav-item ">
-                <a class="nav-link" href="../HTML/index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../HTML/about.html"> About</a>
+                <a class="nav-link" href="/about"> About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../HTML/service.html">Services</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="/service">Services</a>
               </li>
 
-              <li class="nav-item active">
-                <a class="nav-link" href="../HTML/contact.html">Contact Us</a>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Us</a>
               </li>
             </ul>
             <div class="quote_btn-container">
               <form class="form-inline">
-                  <a class="nav-link" href="../HTML/Login.html">
+                  <a class="nav-link" href="/Login">
                     <i class="fa fa-user" aria-hidden="true"></i>
                   </a>
               </form>
@@ -78,33 +78,85 @@
     <!-- end header section -->
   </div>
 
-  <!-- contact section -->
-  <section class="contact_section layout_padding">
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Recover your account
+          Our Services
         </h2>
       </div>
+    </div>
+    <div class="container ">
       <div class="row">
-        <div class="col-md-8 col-lg-6 mx-auto">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="email" id="Email" placeholder="Email" required/>
-              </div>           
-              <div class="btn_box">
-                <button type="submit" id="submitBtn">
-                  Recover
-                </button>
-              </div>
-            </form>
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="../Resources/s1.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Bulid Your Plan
+              </h4>
+              <p>
+                Bulid your academic plan and get started with us
+              </p>
+              <a href="/PlanBuilder">
+                Get Started
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
           </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="../Resources/s2.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Community
+              </h4>
+              <p>
+                Join out community and get feedback on your plan
+              </p>
+              <a href="/Community">
+                Get Started
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="../Resources/s3.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Courses Info
+              </h4>
+              <p>
+                Get all the information about our courses in one place
+              </p>
+              <a href="/PlanBuilder">
+                Get Started
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- end contact section -->
+
+  <!-- end service section -->
+
 
   <!-- info section -->
 
@@ -139,25 +191,25 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="" href="../HTML/index.html">
+              <a class="" href="/index">
                 <img src="../Resources/nav-bullet.png" alt="">
                 Home
               </a>
-              <a class="" href="../HTML/about.html">
+              <a class="" href="/about">
                 <img src="../Resources/nav-bullet.png" alt="">
                 About
               </a>
-              <a class="active" href="../HTML/service.html">
+              <a class="active" href="/service">
                 <img src="../Resources/nav-bullet.png" alt="">
                 Services
               </a>
 
-              <a class="" href="../HTML/contact.html">
+              <a class="" href="/contact">
                 <img src="../Resources/nav-bullet.png" alt="">
                 Contact Us
               </a>
 
-              <a class= "" href="../HTML/Login.html">
+              <a class= "" href="/Login">
                 <img src="../Resources/nav-bullet.png" alt="">
                 Profile
               </a>
@@ -192,11 +244,12 @@
 
   <!-- end info section -->
 
+
   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By PlanIt
+        &copy; <span id="displayYear"></span> All Rights Reserved By PlainIt
       </p>
     </div>
   </footer>
@@ -208,8 +261,6 @@
   <script src="../JS/bootstrap.js"></script>
   <!-- custom js -->
   <script src="../JS/custom.js"></script>
-
-  <script src="../JS/login.js"></script>
 
 
 </body>

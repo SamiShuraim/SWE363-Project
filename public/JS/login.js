@@ -27,6 +27,7 @@ function loginBtnBlue() {
 }
 
 async function login() {
+  console.log("slkdflksdflkjsdf");
   event.preventDefault();
 
   let credential = document.getElementById("Email-PNumber");
