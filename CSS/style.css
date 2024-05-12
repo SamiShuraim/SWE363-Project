@@ -120,6 +120,10 @@ a:focus {
   min-height: auto;
 }
 
+.submission {
+  display: flex;
+  justify-content: space-between;
+}
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
