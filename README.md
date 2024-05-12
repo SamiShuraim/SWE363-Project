@@ -1,7 +1,7 @@
 # PlanIt: Build the plan that you want, your academic journey, your way
 
 
-**About Us**
+### About Us
 
 At Planit, we help you achieve your academic goals. Here's how
 
