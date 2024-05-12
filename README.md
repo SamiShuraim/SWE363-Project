@@ -1,4 +1,4 @@
-**PlanIt: Build the plan that you want, your academic journey, your way**
+# PlanIt: Build the plan that you want, your academic journey, your way
 
 
 **About Us**
