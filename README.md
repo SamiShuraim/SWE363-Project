@@ -1,4 +1,3 @@
-# PlanIt: Build the plan that you want, your academic journey, your way
 
 ![test](Resources/logo-no-background.png)
 ### About Us
