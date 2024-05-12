@@ -1,6 +1,6 @@
 # PlanIt: Build the plan that you want, your academic journey, your way
 
-![test](mohammed-Alhusini-patch-v2/workspaces/SWE363-Project/Resources/logo-no-background.png)
+![test](Resources/logo-no-background.png)
 ### About Us
 
 At Planit, we help you achieve your academic goals. Here's how
