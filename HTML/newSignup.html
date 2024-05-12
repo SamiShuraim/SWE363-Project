@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="../Resources/Icon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>PlanIt</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../CSS/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../CSS/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="../HTML/index.html">
+            <span>PlanIt</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="../HTML/index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/about.html"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/service.html">Services</a>
+              </li>
+
+              <li class="nav-item active">
+                <a class="nav-link" href="../HTML/contact.html">Contact Us</a>
+              </li>
+            </ul>
+            <div class="quote_btn-container">
+              <form class="form-inline">
+                  <a class="nav-link" href="../HTML/Login.html">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                  </a>
+              </form>
+
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Sign up
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-lg-6 mx-auto">
+          <div class="form_container">
+            <form action="">
+              <div>
+                <input type="email" id="Email" placeholder="Email" onchange="signupBtnCheck()" required/>
+              </div>
+
+              <div class="password_container">
+                <input type="password" id="password" placeholder="Password" onchange="signupBtnCheck()" required/>
+                <button type="button" onclick="showHidePassword()" class="toggle_password">
+                  <i class="fa fa-eye" aria-hidden="true" id="toggleEye"></i>
+                </button>
+              </div>              
+              <div class="btn_box">
+                <button type="submit" id="submitBtn">
+                  Sign up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+   <!-- info section -->
+
+   <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Dharan
+                </span>
+              </a>
+
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  PlainIt@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="" href="../HTML/index.html">
+                <img src="../Resources/nav-bullet.png" alt="">
+                Home
+              </a>
+              <a class="" href="../HTML/about.html">
+                <img src="../Resources/nav-bullet.png" alt="">
+                About
+              </a>
+              <a class="active" href="../HTML/service.html">
+                <img src="../Resources/nav-bullet.png" alt="">
+                Services
+              </a>
+
+              <a class="" href="../HTML/contact.html">
+                <img src="../Resources/nav-bullet.png" alt="">
+                Contact Us
+              </a>
+
+              <a class= "" href="../HTML/Login.html">
+                <img src="../Resources/nav-bullet.png" alt="">
+                Profile
+              </a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By PlanIt
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="../JS/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="../JS/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="../JS/custom.js"></script>
+
+  <script src="../JS/login.js"></script>
+
+
+</body>
+
+</html>
