@@ -2,7 +2,7 @@
 ![test](Resources/logo-no-background.png)
 ### About Us
 
-At Planit, we help you achieve your academic goals. Here's how
+At PlanIt, we help you achieve your academic goals. Here's how
 
 ### Build Your Plan
 
