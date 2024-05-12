@@ -570,6 +570,12 @@ function populate_courses() {
   let stu_plan_div = document
     .getElementsByClassName("student-created-plan-div")
     .item(0);
+
+  if (stu_plan_div.children.length) {
+    x(stu_plan_div);
+    return;
+  }
+
   for (let i = 0; i < semesterArray.length; i++) {
     // for each semester
     let semester_div = document.createElement("div");
@@ -618,18 +624,98 @@ function populate_courses() {
   }
 }
 
+function x(stu_plan_div) {
+  for (let i = 0; i < stu_plan_div.children.length; i++) {
+    // for each semester
+    let semester_div = stu_plan_div.children.item(i);
+    let buttons_div = semester_div.children.item(0);
+    semester_div.ondragover = function (e) {
+      e.preventDefault();
+    };
+    semester_div.addEventListener("drop", (e) => {
+      let button = document.createElement("button");
+      button.draggable = false;
+      button.textContent = e.dataTransfer.getData("text");
+      button.id = button.textContent.split(" ").join("") + "d";
+      button.style.cursor = "pointer";
+      button.addEventListener("click", (s) => {
+        buttons_div.removeChild(button);
+        document.getElementById(
+          button.textContent.split(" ").join("") + "u"
+        ).draggable = true;
+        document.getElementById(
+          button.textContent.split(" ").join("") + "u"
+        ).style.cursor = "grab";
+        document.getElementById(
+          button.textContent.split(" ").join("") + "u"
+        ).style.opacity = "1";
+        button.attributes = null;
+        updateCredits();
+      });
+      buttons_div.appendChild(button);
+      document.getElementById(
+        button.textContent.split(" ").join("") + "u"
+      ).draggable = false;
+      document.getElementById(
+        button.textContent.split(" ").join("") + "u"
+      ).style.cursor = "pointer";
+      document.getElementById(
+        button.textContent.split(" ").join("") + "u"
+      ).style.opacity = "0.8";
+      updateCredits();
+    });
+  }
+  updateCredits();
+
+  let downButtons = document
+    .getElementsByClassName("student-created-plan-div")
+    .item(0)
+    .getElementsByTagName("button");
+
+  for (let i = 0; i < downButtons.length; i++) {
+    let button = downButtons.item(i);
+    button.addEventListener("click", (s) => {
+      button.parentElement.removeChild(button);
+      document.getElementById(
+        button.textContent.split(" ").join("") + "u"
+      ).draggable = true;
+      document.getElementById(
+        button.textContent.split(" ").join("") + "u"
+      ).style.cursor = "grab";
+      document.getElementById(
+        button.textContent.split(" ").join("") + "u"
+      ).style.opacity = "1";
+      button.attributes = null;
+      updateCredits();
+    });
+    document.getElementById(
+      button.textContent.split(" ").join("") + "u"
+    ).draggable = false;
+    document.getElementById(
+      button.textContent.split(" ").join("") + "u"
+    ).style.cursor = "pointer";
+    document.getElementById(
+      button.textContent.split(" ").join("") + "u"
+    ).style.opacity = "0.8";
+  }
+}
+
 function updateCredits() {
   let stu_plans = document.getElementsByClassName(
     "student-plan-course-container"
   );
   for (let i = 0; i < stu_plans.length; i++) {
     let credits = 0;
-    let div = stu_plans.item(i).firstChild;
-    div.childNodes.forEach((c) => {
-      let courseCode = c.textContent;
+    let div = stu_plans.item(i).getElementsByTagName("button");
+    for (let j = 0; j < div.length; j++) {
+      console.log(div.length);
+      console.log(div.item(j));
+      let courseCode = div.item(j).textContent;
       credits += allCoursesMap.get(courseCode).credits;
-    });
-    let p = stu_plans.item(i).lastChild;
+      console.log(courseCode);
+      console.log(credits);
+    }
+    let p = stu_plans.item(i).getElementsByTagName("p").item(0);
     p.textContent = credits;
   }
 }
@@ -677,7 +763,48 @@ async function savePlan() {
   try {
     let res = await fetch(`http://localhost:3000/plan`, options);
     if (res.ok) {
-      location.href = "/profile";
+      location.href =
+        "/profile/" + JSON.parse(localStorage.getItem("user"))["id"];
+      // redirect to profile page.
+    } else {
+      alert("Something went wrong");
+      location.reload();
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+async function modifyPlan() {
+  let name = document.URL.split("name=")[1].split("&")[0];
+  let semesters = document.getElementsByClassName(
+    "student-plan-course-container"
+  );
+  let plan = {};
+  for (let i = 0; i < semesters.length; i++) {
+    let semester = semesters.item(i).getElementsByTagName("div").item(0);
+    let courses = [];
+    for (let j = 0; j < semester.getElementsByTagName("button").length; j++) {
+      courses.push(semester.getElementsByTagName("button").item(j).textContent);
+    }
+    plan[i] = courses;
+  }
+
+  console.log(plan);
+  const options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: `{
+    "id": "${JSON.parse(localStorage.getItem("user"))["id"]}",
+      "plan":${JSON.stringify(plan)},
+      "name": "${name}"
+    }`,
+  };
+  try {
+    let res = await fetch(`http://localhost:3000/plan/modify`, options);
+    if (res.ok) {
+      location.href =
+        "/profile/" + JSON.parse(localStorage.getItem("user"))["id"];
       // redirect to profile page.
     } else {
       alert("Something went wrong");

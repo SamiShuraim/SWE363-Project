@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Login</title>
+    <title>PlanBuilder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -103,9 +103,27 @@
           </span>
         </div>
         <div class="university-plan-div"></div>
-        <div class="student-created-plan-div"></div>
+        <div class="student-created-plan-div">
+          {% for i in plan %}
+          <div class="student-plan-course-container">
+            <div>
+              {% for j in i %}
+                <button draggable="false" id="{{ j }}d" style="cursor: pointer;">{{ j }}</button>
+              {% endfor %}
+            </div>
+            <p>
+              0
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+        {% if not plan %}
         <input id="plan-name" placeholder="Name..."></input>
         <button onclick="savePlan()">Save</button>
+        {% else %}
+        <button onclick="modifyPlan()">Update</button>
+        {% endif %}
+
         <script>
           populate_courses();
         </script>

@@ -1,5 +1,4 @@
 import { Schema, connect, model } from "mongoose";
-import { boolean } from "webidl-conversions";
 
 connect("mongodb://localhost:27017/SWE363");
 
@@ -12,6 +11,7 @@ const userSchema = Schema({
 
 const planSchema = Schema({
   plan: String,
+  userId: Number,
   name: String,
   CreatedAt: { type: Date, default: Date.now() },
   likes: Number,

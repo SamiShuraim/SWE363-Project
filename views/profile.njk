@@ -33,7 +33,7 @@
                 </div>
                 <div class="frame-container">
                     <div class="panel-1-parent">
-                        <div class="panel-1">
+                        {# <div class="panel-1">
                             <div class="background"></div>
                             <div class="plan-parent">
                                 <div class="plan"></div>
@@ -42,15 +42,18 @@
                             <div class="title-wrapper">
                                 <div class="title">Plan A</div>
                             </div>
+                        </div> #}
+                        {% for i in plans %}
+                        <div class="panel-2" style="margin-bottom: 40px;">
+                            <a style="text-decoration: none;" href="/planBuilder?name={{ i.name }}&userId={{ i.userId }}">
+                                <div class="background1"></div>
+                                
+                                <div class="title-container">
+                                    <div class="title1">{{ i.name }}</div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="panel-2" style="margin-bottom: 140px;" id="panel2Container">
-                            <div class="background1"></div>
-                            <img class="swe-program-prerequisite-lan1" loading="lazy" alt="" src="../Resources/SWE Program-Prerequisite - landscape 3.png" />
-
-                            <div class="title-container">
-                                <div class="title1">Plan B</div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -68,55 +71,7 @@
         </main>
 
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-
-                var panel2Container = document.getElementById("panel2Container");
-                if (panel2Container) {
-                    panel2Container.addEventListener("click", function(e) {});
-                }
-
-                // Click event for side bar icons
-                var sideBarIcons = document.querySelectorAll(".side-bar-icon");
-                sideBarIcons.forEach(function(icon) {
-                    icon.addEventListener("click", function(e) {
-                        var altText = e.target.alt;
-                        switch (altText) {
-                            case "menu":
-                                console.log(altText)
-                                break;
-                            case "add":
-                                console.log(altText)
-                                break;
-                            case "edit":
-                                console.log(altText)
-                                break;
-                            case "remove":
-                                console.log(altText)
-                                break;
-                            case "settings":
-                                console.log(altText)
-                                break;
-                            case "home":
-                                console.log(altText)
-                                break;
-                            case "community":
-                                console.log(altText)
-                                break;
-                            case "logout":
-                                console.log(altText)
-                                break;
-                            case "support":
-                                console.log(altText)
-                                break;
-                            default:
-                                // Default code if alt text doesn't match any case
-                                break;
-                        }
-                    });
-                });
-            });
-        </script>
+        <script src="../js/profile.js"></script>
 </body>
 
 </html>

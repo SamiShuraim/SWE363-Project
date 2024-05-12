@@ -2,6 +2,7 @@ import {
   createPlan,
   getMyPlans,
   getAllPlans,
+  modifyPlan,
 } from "../controllers/plan-controller.js";
 
 import express from "express";
@@ -36,6 +37,19 @@ app.post("/", async (req, res) => {
     ret = await createPlan(id, plan, major, summer, name);
     res.sendStatus(200);
   }
+});
+
+app.post("/modify", async (req, res) => {
+  let id = req.body.id;
+  let name = req.body.name;
+  let plan = req.body.plan;
+
+  if (await modifyPlan(name, id, JSON.stringify(plan))) {
+    res.sendStatus(200);
+    return;
+  }
+
+  res.sendStatus(403);
 });
 
 export default app;

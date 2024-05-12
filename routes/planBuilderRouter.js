@@ -1,4 +1,4 @@
-import {} from "../controllers/planBuilder-controller.js";
+import { getPlan } from "../controllers/planBuilder-controller.js";
 
 import express from "express";
 import njk from "nunjucks";
@@ -13,7 +13,21 @@ njk.configure("./SWE363-Project/views", {
 });
 
 app.get("/", async (req, res) => {
-  res.render("planBuilder.njk");
+  let id = req.query.userId;
+  let name = req.query.name;
+
+  if (id == null || name == null) {
+    res.render("planBuilder.njk");
+    return;
+  }
+  let plan = JSON.parse((await getPlan(name, id)).plan);
+  let array = [];
+
+  for (var s in plan) array.push(plan[s]);
+
+  res.render("planBuilder.njk", {
+    plan: array,
+  });
 });
 
 export default app;
