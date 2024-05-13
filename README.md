@@ -1,5 +1,5 @@
 
-![test](Resources/logo-no-background.png)
+![PlanIT logo](public/Resources/logo-no-background.png)
 ### About Us
 
 At PlanIt, we help you achieve your academic goals. Here's how
