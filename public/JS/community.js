@@ -41,6 +41,50 @@ function sortSubmissions(sortBy, container) {
   submissions.forEach((submission) => container.appendChild(submission)); // Re-append submissions in new order
 }
 
+async function upvotePlan(name, id) {
+  const options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: `{
+      "name":"${name}",
+      "userId":"${id}"
+    }`,
+  };
+  try {
+    let res = await fetch(`http://localhost:3000/plan/upvote`, options);
+    if (res.ok) {
+      location.href = "/community";
+    } else {
+      alert("Something went wrong");
+      location.reload();
+    }
+  } catch (e) {
+    alert("Something went wrong");
+  }
+}
+
+async function downvotePlan(name, id) {
+  const options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: `{
+    "name":"${name}",
+    "userId":"${id}"
+  }`,
+  };
+  try {
+    let res = await fetch(`http://localhost:3000/plan/downvote`, options);
+    if (res.ok) {
+      location.href = "/community";
+    } else {
+      alert("Something went wrong");
+      location.reload();
+    }
+  } catch (e) {
+    alert("Something went wrong");
+  }
+}
+
 function setLogo() {
   document
     .getElementById("image0_4_118")

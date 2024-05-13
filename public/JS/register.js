@@ -20,7 +20,9 @@ async function register() {
     let res = await fetch(`http://localhost:3000/register`, options);
     if (res.ok) {
       localStorage.setItem("user", await res.text());
-      location.href = "/profile";
+      location.href = `/profile/${
+        JSON.parse(localStorage.getItem("user"))["id"]
+      }`;
       // redirect to profile page.
     } else {
       alert("Invalid info. Try again.");

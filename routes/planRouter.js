@@ -3,6 +3,8 @@ import {
   getMyPlans,
   getAllPlans,
   modifyPlan,
+  upvotePlan,
+  downvotePlan,
 } from "../controllers/plan-controller.js";
 
 import express from "express";
@@ -45,6 +47,30 @@ app.post("/modify", async (req, res) => {
   let plan = req.body.plan;
 
   if (await modifyPlan(name, id, JSON.stringify(plan))) {
+    res.sendStatus(200);
+    return;
+  }
+
+  res.sendStatus(403);
+});
+
+app.post("/upvote", async (req, res) => {
+  let id = req.body.userId;
+  let name = req.body.name;
+
+  if (await upvotePlan(name, id)) {
+    res.sendStatus(200);
+    return;
+  }
+
+  res.sendStatus(403);
+});
+
+app.post("/downvote", async (req, res) => {
+  let id = req.body.userId;
+  let name = req.body.name;
+
+  if (await downvotePlan(name, id)) {
     res.sendStatus(200);
     return;
   }

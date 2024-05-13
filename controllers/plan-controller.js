@@ -49,7 +49,7 @@ async function createPlan(id, plan, major, summer, name) {
 
 async function modifyPlan(name, id, plan) {
   let p = await Plan.findOne({
-    name: name,
+    name: decodeURI(name),
     userId: id,
   });
 
@@ -59,4 +59,35 @@ async function modifyPlan(name, id, plan) {
   return true;
 }
 
-export { getMyPlans, getAllPlans, createPlan, modifyPlan };
+async function upvotePlan(name, id) {
+  let p = await Plan.findOne({
+    name: decodeURI(name),
+    userId: id,
+  });
+
+  p.likes += 1;
+
+  p.save();
+  return true;
+}
+
+async function downvotePlan(name, id) {
+  let p = await Plan.findOne({
+    name: decodeURI(name),
+    userId: id,
+  });
+
+  p.likes -= 1;
+
+  p.save();
+  return true;
+}
+
+export {
+  getMyPlans,
+  getAllPlans,
+  createPlan,
+  modifyPlan,
+  upvotePlan,
+  downvotePlan,
+};
