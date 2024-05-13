@@ -6,7 +6,7 @@
 
 .university-plan-course-container div,
 .student-plan-course-container div {
-    display: grid;
+    /* display: grid; */
     background: rgba(102, 102, 102, 0.33);
     backdrop-filter: blur(12.5px);
     /* Note: backdrop-filter has minimal browser support */
@@ -36,7 +36,8 @@
 .university-plan-course-container,
 .student-plan-course-container {
     display: grid;
-    grid-template-columns: 100%;
+    text-align: center;
+    grid-template-columns: 70%;
 }
 
 .university-plan-course-container button,
