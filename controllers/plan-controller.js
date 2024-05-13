@@ -8,6 +8,26 @@ async function getMyPlans(id) {
 
 async function getAllPlans() {
   let plans = await Plan.find();
+  let res = [];
+
+  for (let i = 0; i < plans.length; i++) {
+    let p = plans[i];
+
+    let userId = p.userId;
+
+    let user = await User.find({ id: userId });
+
+    res.push({
+      plan: p.plan,
+      userId: p.userId,
+      name: p.name,
+      CreatedAt: p.createdAt,
+      likes: p.likes,
+      major: p.major,
+      summer: p.summer,
+    });
+  }
+
   return JSON.stringify(plans);
 }
 

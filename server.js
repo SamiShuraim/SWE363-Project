@@ -9,6 +9,7 @@ import homeRouter from "./routes/homeRouter.js";
 import profileRouter from "./routes/profileRouter.js";
 import planRouter from "./routes/planRouter.js";
 import planBuilderRouter from "./routes/planBuilderRouter.js";
+import { getAllPlans } from "./controllers/plan-controller.js";
 
 const { configure } = njkPkg;
 const { json, urlencoded } = bodyParserPkg;
@@ -37,6 +38,10 @@ app.get("/", (req, res) => {
   res.render("index.html"); // Todo: Home page
 });
 
+app.get("/index", (req, res) => {
+  res.render("index.html"); // Todo: Home page
+});
+
 app.get("/login", (req, res) => {
   res.render("Login.html");
 });
@@ -52,11 +57,20 @@ app.get("/service", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about.html");
 });
-app.get("/community", (req, res) => {
-  res.render("community.njk");
+
+app.get("/community", async (req, res) => {
+  let plans = await getAllPlans();
+  res.render("community.njk", {
+    plans: JSON.parse(plans),
+  });
 });
+
 app.get("/recover", (req, res) => {
   res.render("recover.html");
+});
+
+app.get("/signup", (req, res) => {
+  res.render("Signup.njk");
 });
 
 // Use the answers router for any request to '/answer'
