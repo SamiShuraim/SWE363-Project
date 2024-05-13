@@ -1,10 +1,10 @@
 
-![test](Resources/logo-no-background.png)
+![PlanIT logo](public/Resources/logo-no-background.png)
 ### About Us
 
 At PlanIt, we help you achieve your academic goals. Here's how
 
-### Build Your Plan
+1. ### Build Your Plan
 
 Get started on the right foot with our personalized planning service
 
@@ -12,7 +12,7 @@ Get started on the right foot with our personalized planning service
 - Create a plan that works for you
 - Stay on track and make progress toward your academic goals
 
-### Community
+2. ### Community
 
 Join our vibrant community of students who are all working towards their academic goals
 
@@ -20,7 +20,7 @@ Join our vibrant community of students who are all working towards their academi
 
 - Get inspired by others' plans
 
-### Courses Info
+3. ### Courses Info
 
 - Get all the information you need about your academic courses in one place
 
