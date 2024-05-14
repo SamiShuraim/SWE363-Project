@@ -57,7 +57,7 @@ const semesterArray = [];
 const allCoursesMap = new Map();
 const coursesMap = new Map();
 
-// SWE Courses 
+// SWE Courses
 
 coursesMap.set(
   "ENGL 101",
@@ -536,7 +536,7 @@ semesterArray[8] = new Map(coursesMap);
 
 coursesMap.clear();
 
-// end SWE Courses 
+// end SWE Courses
 
 // CS Courses
 
@@ -656,7 +656,6 @@ coursesMap.clear();
 // coursesMap.set("GS xxx", new Course("GS xxx", 3, "GS Elective", "General Studies elective course chosen from a list of approved courses; topics may vary and cover interdisciplinary subjects outside the field of software engineering."));
 // coursesMap.set("IAS xxx", new Course("IAS xxx", 2, "Islamic/Arabic Elective", "Elective course focusing on Islamic or Arabic studies; topics may include Islamic culture, history, literature, language, or other related subjects."));
 // coursesMap.set("ICS 414", new Course("SWE 412", 3, "Senior Project II", "Second part of a two-semester Senior Project; continuation and completion of the substantial software development project initiated in Software Engineering Project I; team-based project work; application of software engineering principles and practices."));
-
 
 // coursesMap.forEach((c) => {
 //     allCoursesMap.set(c.code, c);
@@ -924,7 +923,6 @@ async function modifyPlan() {
     plan[i] = courses;
   }
 
-  console.log(plan);
   const options = {
     method: "POST",
     headers: { "Content-Type": "application/json" },

@@ -1,202 +1,240 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>PlanBuilder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="../CSS/login.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="../CSS/PlanBuilder.css"
-    />
-    <script src="../JS/login.js"></script>
-    <script src="../JS/PlanBuilder.js"></script>
-  </head>
-
-  <body>
-    <main>
-      <div class="left-div">
-        <div class="logo">
-          <svg
-            width="472"
-            height="128"
-            viewBox="0 0 472 128"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <rect
-              width="472"
-              height="128"
-              rx="20"
-              fill="url(#pattern0_4_118)"
-            />
-            <defs>
-              <pattern
-                id="pattern0_4_118"
-                patternContentUnits="objectBoundingBox"
-                width="1"
-                height="1"
-              >
-                <use
-                  xlink:href="#image0_4_118"
-                  transform="matrix(0.000912726 0 0 0.00336568 -0.214683 -2.0457)"
-                />
-              </pattern>
-              <image
-                id="image0_4_118"
-                width="1500"
-                height="1500"
-                xlink:href=""
-              />
-            </defs>
-          </svg>
-          <script>
-            setLogo();
-          </script>
+    <head>
+        <!-- Basic -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Site Metas -->
+        <link rel="icon" href="../Resources/Icon.png" type="image/gif" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PlanIt</title>
+        <!-- bootstrap core css -->
+        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.css" />
+        <!-- fonts style -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+        <!-- font awesome style -->
+        <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="../CSS/style.css" rel="stylesheet" />
+        <!-- responsive style -->
+        <link href="../CSS/responsive.css" rel="stylesheet" />
+        <link href="../CSS/PlanBuilder.css" rel="stylesheet" type='text/css' media='screen' />
+    </head>
+    <body class="sub_page">
+        <div class="hero_area">
+            <!-- header section strats -->
+            <header class="header_section">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg custom_nav-container ">
+                        <a class="navbar-brand" href="/index">
+                        <span>PlanIt</span>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav  ml-auto">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/about"> About</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/service">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contact">Contact Us</a>
+                                </li>
+                            </ul>
+                            <div class="quote_btn-container">
+                                <form class="form-inline">
+                                    <a class="nav-link" href="/Login">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <!-- end header section -->
         </div>
-        <div class="choose-major-div">
-          <select id="select-major">
-            <option>Software Engineering</option>
-            <option>Accounting</option>
-            <option>Actuarial Science and Financial Mathematics</option>
-            <option>Aerospace Engineering</option>
-            <option>Architectural Engineering</option>
-            <option>Architecture</option>
-            <option>Bioengineering</option>
-            <option>Chemical Engineering</option>
-            <option>Chemistry</option>
-            <option>Civil Engineering</option>
-            <option>Computer Engineering</option>
-            <option>Computer Science</option>
-            <option>Control and Instrumentation Engineering</option>
-            <option>Electrical Engineering</option>
-            <option>Electrical Engineering and Physics</option>
-            <option>Environmental Science and Engineering</option>
-            <option>Finance</option>
-            <option>Geology</option>
-            <option>Geophysics</option>
-            <option>Industrial and Systems Engineering</option>
-            <option>Integrated Design</option>
-            <option>Management</option>
-            <option>Management Information System</option>
-            <option>Marketing</option>
-            <option>Materials Science and Engineering</option>
-            <option>Mathematics</option>
-            <option>Mechanical Engineering</option>
-            <option>Mining Science and Engineering</option>
-            <option>Petroleum Engineering</option>
-            <option>Physics</option>
-            <option>Smart and Sustainable Cities</option>
-          </select>
-          <span id="training-option">
-            <button id="summer">Summer</button>
-            <button id="internship">Internship</button>
-          </span>
-        </div>
-        <div class="university-plan-div"></div>
-        <div class="student-created-plan-div">
-          {% for i in plan %}
-          <div class="student-plan-course-container">
+        <!-- service section -->
+        <section class="service_section layout_padding">
             <div>
-              {% for j in i %}
-                <button draggable="false" id="{{ j }}d" style="cursor: pointer;">{{ j }}</button>
-              {% endfor %}
+                <div>
+                    <div class="container">
+                        <div class="heading_container heading_center">
+                            <select id="select-major">
+                                <option>Software Engineering</option>
+                                <option>Accounting</option>
+                                <option>Actuarial Science and Financial Mathematics</option>
+                                <option>Aerospace Engineering</option>
+                                <option>Architectural Engineering</option>
+                                <option>Architecture</option>
+                                <option>Bioengineering</option>
+                                <option>Chemical Engineering</option>
+                                <option>Chemistry</option>
+                                <option>Civil Engineering</option>
+                                <option>Computer Engineering</option>
+                                <option>Computer Science</option>
+                                <option>Control and Instrumentation Engineering</option>
+                                <option>Electrical Engineering</option>
+                                <option>Electrical Engineering and Physics</option>
+                                <option>Environmental Science and Engineering</option>
+                                <option>Finance</option>
+                                <option>Geology</option>
+                                <option>Geophysics</option>
+                                <option>Industrial and Systems Engineering</option>
+                                <option>Integrated Design</option>
+                                <option>Management</option>
+                                <option>Management Information System</option>
+                                <option>Marketing</option>
+                                <option>Materials Science and Engineering</option>
+                                <option>Mathematics</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Mining Science and Engineering</option>
+                                <option>Petroleum Engineering</option>
+                                <option>Physics</option>
+                                <option>Smart and Sustainable Cities</option>
+                            </select>
+                            <span id="training-option">
+                            <button id="summer">Summer</button>
+                            <button id="internship">Internship</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="university-plan-div">
+                    </div>
+                    <div class="student-created-plan-div">
+                        {% for i in plan %}
+                        <div class="student-plan-course-container">
+                          <div>
+                            {% for j in i %}
+                              <button draggable="false" id="{{ j }}d" style="cursor: pointer;">{{ j }}</button>
+                            {% endfor %}
+                          </div>
+                          <p>
+                            0
+                          </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% if editable  %}
+                        {% if not plan %}
+                        <input id="plan-name" placeholder="Name...">
+                        <button onclick="savePlan()">Save</button>
+                        {% else %}
+                        <button onclick="modifyPlan()">Update</button>
+                        {% endif %}
+                    {% endif %}
+                </div>
             </div>
-            <p>
-              0
-            </p>
-          </div>
-          {% endfor %}
-        </div>
-        {% if not plan %}
-        <input id="plan-name" placeholder="Name..."></input>
-        <button onclick="savePlan()">Save</button>
-        {% else %}
-        <button onclick="modifyPlan()">Update</button>
-        {% endif %}
-
+        </section>
+        <!-- end service section -->
+        <!-- info section -->
+        <section class="info_section layout_padding2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="info_contact">
+                            <h4>
+                                Address
+                            </h4>
+                            <div class="contact_link_box">
+                                <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                Dharan
+                                </span>
+                                </a>
+                                <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                PlanIt@gmail.com
+                                </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="info_link_box">
+                            <h4>
+                                Links
+                            </h4>
+                            <div class="info_links">
+                                <a class="" href="/index">
+                                <img src="../Resources/nav-bullet.png" alt="">
+                                Home
+                                </a>
+                                <a class="" href="/about">
+                                <img src="../Resources/nav-bullet.png" alt="">
+                                About
+                                </a>
+                                <a class="active" href="/service">
+                                <img src="../Resources/nav-bullet.png" alt="">
+                                Services
+                                </a>
+                                <a class="" href="/contact">
+                                <img src="../Resources/nav-bullet.png" alt="">
+                                Contact Us
+                                </a>
+                                <a class= "" href="/Login">
+                                <img src="../Resources/nav-bullet.png" alt="">
+                                Profile
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="info_detail">
+                            <h4>
+                                Info
+                            </h4>
+                            <div class="info_social">
+                                <a>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end info section -->
+        <!-- footer section -->
+        <footer class="footer_section">
+            <div class="container">
+                <p>
+                    &copy; <span id="displayYear"></span> All Rights Reserved By PlanIt
+                </p>
+            </div>
+        </footer>
+        <!-- footer section -->
+        <!-- jQery -->
+        <script src="../JS/jquery-3.4.1.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="../JS/bootstrap.js"></script>
+        <!-- custom js -->
+        <script src="../JS/custom.js"></script>
+        <script src="../JS/PlanBuilder.js"></script>
+        <script src="../JS/login.js"></script>
         <script>
-          populate_courses();
+            populate_courses();
         </script>
-      </div>
-    </main>
-    <div class="sidebar">
-      <button>
-        <img
-          class="side-bar-icon"
-          style="height: 29.08px; width: 41.4px; margin-top: 40px"
-          src="../Resources/menu.png"
-          alt="menu"
-        />
-      </button>
-
-      {# <button>
-        <img
-          class="side-bar-icon"
-          style="height: 52px; width: 64px"
-          src="../Resources/add.png"
-          alt="add"
-        />
-      </button> #}
-
-      <button>
-        <img
-          class="side-bar-icon"
-          style="height: 64px; width: 64px"
-          src="../Resources/edit.png"
-          alt="edit"
-        />
-      </button>
-
-      <button>
-        <img
-          class="side-bar-icon"
-          style="height: 64px; width: 62.8px"
-          src="../Resources/remove.png"
-          alt="remove"
-        />
-      </button>
-
-      <button>
-        <img
-          class="side-bar-icon"
-          style="height: 45px; width: 50px"
-          src="../Resources/settings.png"
-          alt="settings"
-        />
-      </button>
-
-      <button>
-        <img
-          class="side-bar-icon"
-          style="height: 55px; width: 51px"
-          src="../Resources/home.png"
-          alt="home"
-        />
-      </button>
-
-      <button>
-        <img
-          class="side-bar-icon"
-          style="height: 61px; width: 50px"
-          src="../Resources/community.png"
-          alt="community"
-        />
-      </button>
-      <p></p>
-      <p></p>
-      <button>
-        <img src="../Resources/Picture6.png" />
-      </button>
-    </div>
-  </body>
+    </body>
 </html>

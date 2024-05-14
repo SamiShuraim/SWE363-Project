@@ -136,7 +136,7 @@
       </div>
       <div class="container">
         {% for i in plans %}
-        <div class="col-md submissions">
+        <div class="col-md submissions" onclick="location.href = '/planBuilder?name={{ i.name }}&userId={{ i.userId }}'">
           <div class="box">
             <div class="row">
               <div class="submission" data-score="{{ i.likes }}">

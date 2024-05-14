@@ -27,6 +27,7 @@ app.get("/", async (req, res) => {
 
   res.render("planBuilder.njk", {
     plan: array,
+    editable: !req.headers.referer.includes("Community"),
   });
 });
 
