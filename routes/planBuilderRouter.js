@@ -17,7 +17,10 @@ app.get("/", async (req, res) => {
   let name = req.query.name;
 
   if (id == null || name == null) {
-    res.render("planBuilder.njk");
+    res.render("planBuilder.njk", {
+      plans: false,
+      editable: true,
+    });
     return;
   }
   let plan = JSON.parse((await getPlan(name, id)).plan);
